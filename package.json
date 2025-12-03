@@ -14,8 +14,8 @@
   "author": "Ritej",
   "license": "ISC",
   "engines": {
-    "node": "6.10.0",
-    "npm": "3.10.10"
+    "node": "13.x",
+    "npm": "6.x"
   },
   "dependencies": {
     "axios": "^1.2.0",
