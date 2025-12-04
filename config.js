@@ -12,5 +12,5 @@
 
 // Updated DB connection string on 06-06-2024 for local and testing db purposes
 module.exports = {
-  database: "mongodb+srv://bpointercommon_db_user:9KMZnkTmB4ybj9eN@fml.l8r3am7.mongodb.net/fml?retryWrites=true&w=majority"
+  database: "mongodb+srv://bpointercommon_db_user:9KMZnkTmB4ybj9eN@fml.l8r3am7.mongodb.net/fml_local?retryWrites=true&w=majority"
 };

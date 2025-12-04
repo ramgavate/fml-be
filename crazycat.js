@@ -52,43 +52,19 @@ var drArray = {
     arr : []
 };
 
-//chenge made here on 28-06-2024 due to Render.com deployment issues
-// const server = socketApp.listen(process.env.PORT || 8080);
-// // Pass a http.Server instance to the listen method
-// var io = require('./io').initialize(server);
-// const config = require('./config');
-
-// //Initializing Port and Mongoose Connect
-// const port = process.env.PORT || 7777;
-// const portHTTPS = process.env.PORT || 7780;
-// const adminport = process.env.PORT || 7778; //9000 for test | 7778 for main
-// const adminport2 = process.env.PORT || 7779; //9000 for test | 7778 for main
-
-
-// mongoose.connect(config.database);
-
-// Use only ONE port on Render
-const PORT = process.env.PORT || 8080;
-
-// Start main server with socketApp
-const server = socketApp.listen(PORT, () => {
-  console.log("Server running on port:", PORT);
-});
-
-// Initialize socket.io with the same server instance
+const server = socketApp.listen(process.env.PORT || 8080);
+// Pass a http.Server instance to the listen method
 var io = require('./io').initialize(server);
-
 const config = require('./config');
-mongoose.set("strictQuery", false);
 
-// MongoDB connection
-mongoose.connect(config.database, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.error("MongoDB connection error:", err));
+//Initializing Port and Mongoose Connect
+const port = process.env.PORT || 7777;
+const portHTTPS = process.env.PORT || 7780;
+const adminport = process.env.PORT || 7778; //9000 for test | 7778 for main
+const adminport2 = process.env.PORT || 7779; //9000 for test | 7778 for main
 
+
+mongoose.connect(config.database);
 
 //HTTP Request Protocol
 app.use(express.static(__dirname + '/uploads'));
